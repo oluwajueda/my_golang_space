@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"log"
 	"net"
 )
@@ -36,4 +37,5 @@ func serve(c net.Conn) {
 			break
 		}
 	}
+	io.WriteString(c, "Here we WRITE to the response.")
 }
